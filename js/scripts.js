@@ -8,28 +8,52 @@ let edadIngresada;
 do{
     edadSolicitante = parseInt(prompt("Por favor, ingrese su edad"));
     edadIngresada = edadSolicitante;
-
-    if(edadIngresada <18 || edadIngresada >70){
+    if(isNaN(edadIngresada)){
+        alert("Por favor ingrese un valor numerico")
+    }
+    else if(edadIngresada <18 || edadIngresada >70){
         alert("La edad ingresada es: " + edadIngresada + ", no puede solicitar el prestamo");
     }
 }
-while(edadIngresada <18 || edadIngresada >70);
+while(edadIngresada <18 || edadIngresada >70 || isNaN(edadIngresada));
 
-// Si cumple con la edadpasa a la carga de datos personales
+// Si cumple con la edad, pasa a la carga de datos personales
 
-let nombreSolicitante = prompt("Por favor, ingrese su nombre");
-    console.log("El nombre ingresado es " + nombreSolicitante);
-
-let apellidoSolicitante = prompt("Por favor, ingrese su apellido"); 
-    console.log("El apellido ingresado es " + apellidoSolicitante);
+let nombreCompletoSolicitante = prompt("Por favor, ingrese su nombre y apellido");
+    console.log("Los datos ingresados son: " + nombreCompletoSolicitante);
 
 let emailSolicitante = prompt("Por favor, ingrese su e-mail");
     console.log("El email ingresado es " + emailSolicitante);
 
 // Calculador del interes del prestamo
 
-let montoSolicitado = parseInt(prompt("Por favor, ingrese el monto a solicitar"));
-let plazoPrestamo = parseInt(prompt("Por favor, ingrese el plazo deseado"));
+let montoSolicitado;
+let monto = montoSolicitado
+
+// Verificacion que el monto y plazo ingresados no contengan texto
+do{
+    montoSolicitado = parseInt(prompt("Por favor, ingrese el monto a solicitar"));
+    monto = montoSolicitado;
+    if(isNaN(monto)){
+        alert("Por favor ingrese un valor numerico")
+    }
+}
+while(isNaN(monto));
+
+let plazoPrestamo;
+let plazo;
+
+do{
+    plazoPrestamo = parseInt(prompt("Por favor, ingrese el plazo deseado"));
+    plazo = plazoPrestamo
+    if(isNaN(plazo)){
+        alert("Por favor ingrese un valor numerico")
+    }
+}
+while(isNaN(plazo));
+
+// Conversion de la tna a tasa mensual
+
 let tna = 82.60;
 let tasaInteresMensual = tna/12/100;
 
