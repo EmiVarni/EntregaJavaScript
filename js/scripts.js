@@ -44,7 +44,7 @@ alert("El interés del préstamo es: " + interes);
 // Calculo del valor de cuotas mensuales
 
 function valorCuotas(monto, plazo, tasaMensual){
-    let cuotas = parseFloat((monto + tasaMensual)/plazo);
+    let cuotas = parseFloat((monto + (monto * plazo * tasaMensual))/plazo);
     return cuotas;
 }
 
