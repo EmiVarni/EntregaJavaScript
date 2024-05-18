@@ -84,3 +84,6 @@ function valorPagare(monto, plazo, tasaMensual){
 
 let pagare = valorPagare(montoSolicitado, plazoPrestamo, tasaInteresMensual);
 alert("El valor del pagare es: " + pagare.toFixed(2));
+
+let continuarPrestamo = alert("Si desea solicitar esta opcion presione aceptar y a la brevedad será contactado");
+console.log("Acepta la opcion, contactar a la brevedad");
